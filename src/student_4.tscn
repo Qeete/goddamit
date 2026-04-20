@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b7j1eefkvdin0"]
+
+[ext_resource type="Script" uid="uid://b5hulvmt5w56v" path="res://src/student.gd" id="1_7os6s"]
+[ext_resource type="Texture2D" uid="uid://12nw0ct11k7v" path="res://assets/Снимок экрана 2026-03-02 в 23_14_50-edited-free (carve.photos).png" id="2_sekqr"]
+
+[node name="student4" type="Control" unique_id=880132682]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7os6s")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2026733009]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 32.0
+offset_right = 285.0
+offset_bottom = 355.11807
+texture = ExtResource("2_sekqr")
+expand_mode = 1

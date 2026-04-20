@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://da3kmw4pom1fq"]
+
+[ext_resource type="Script" uid="uid://c1vvd5urr5i7n" path="res://src/stamp.gd" id="1_i01et"]
+[ext_resource type="Texture2D" uid="uid://cvq1sbdhau5fm" path="res://assets/i (2)-no-bg-preview (carve.photos).png" id="2_i01et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i01et"]
+size = Vector2(72, 103)
+
+[node name="stamp" type="Area2D" unique_id=1109213863]
+script = ExtResource("1_i01et")
+stamp_type = "denied"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1341935705]
+position = Vector2(-2.2737368e-13, 9.536743e-07)
+scale = Vector2(0.23937505, 0.23937505)
+texture = ExtResource("2_i01et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269553042]
+position = Vector2(3, -1.5)
+shape = SubResource("RectangleShape2D_i01et")

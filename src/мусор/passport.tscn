@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dq2jcirocgmom"]
+
+[ext_resource type="Texture2D" uid="uid://mirh6cu27a3x" path="res://assets/LoveSongInner1.png" id="1_1odhd"]
+[ext_resource type="Script" uid="uid://c3188w8m5vl2o" path="res://src/мусор/passport.gd" id="1_gp3m2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twbbd"]
+size = Vector2(84, 43)
+
+[node name="passport" type="Node2D" unique_id=804385675]
+script = ExtResource("1_gp3m2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=16183555]
+scale = Vector2(0.48617828, 0.48617828)
+texture = ExtResource("1_1odhd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1629650161]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1947717408]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_twbbd")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

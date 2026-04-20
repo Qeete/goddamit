@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dn6862mtnihq5"]
+
+[ext_resource type="Texture2D" uid="uid://c41852ycpo2vm" path="res://assets/2026-03-01 21.00.38.jpg" id="1_uyd4e"]
+
+[node name="open_document" type="TextureRect" unique_id=451445673]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_uyd4e")

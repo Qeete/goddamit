@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://dus0j0js6hcui"]
+
+[ext_resource type="Texture2D" uid="uid://bcmhy38bliswn" path="res://assets/Снимок экрана 2026-03-01 в 20.49.58.png" id="1_rlaii"]
+[ext_resource type="Texture2D" uid="uid://d4m1v2mnjsjsu" path="res://assets/2026-03-01 20.41.11.jpg" id="2_fyndt"]
+[ext_resource type="PackedScene" uid="uid://c7ypb0ui033c0" path="res://src/stamp_mark.tscn" id="2_srxbw"]
+[ext_resource type="Script" uid="uid://b5tqbeh36rgr3" path="res://src/document_spawner.gd" id="3_3cfgd"]
+[ext_resource type="Texture2D" uid="uid://t0m8hh2lrwwg" path="res://assets/2026-03-01 20.21.09.jpg" id="3_5mrjc"]
+[ext_resource type="PackedScene" uid="uid://ddaoi2wrek1bx" path="res://src/document.tscn" id="4_fyndt"]
+[ext_resource type="Script" uid="uid://bf40wtv81qfii" path="res://src/student_spawner.gd" id="6_rlaii"]
+[ext_resource type="PackedScene" uid="uid://hbl3on2ppefd" path="res://src/student.tscn" id="7_5mrjc"]
+[ext_resource type="Resource" uid="uid://djqcdeftqarcu" path="res://assets/student_1.tres" id="8_kqbth"]
+[ext_resource type="Script" uid="uid://ddlgouqke3big" path="res://src/bell_2.gd" id="9_mgm53"]
+[ext_resource type="Texture2D" uid="uid://cfttyfmcr86bs" path="res://assets/Безымянный 2.png" id="9_uewes"]
+[ext_resource type="Script" uid="uid://37bor8c7a5qt" path="res://src/student_data.gd" id="10_d3u4l"]
+[ext_resource type="Texture2D" uid="uid://mvv5n4hp1yqk" path="res://assets/i-no-bg-preview (carve.photos).png" id="10_mlv6i"]
+[ext_resource type="Texture2D" uid="uid://dhcop6rumwtwq" path="res://assets/Снимок экрана 2026-03-02 в 23_21_03-edited-free (carve.photos).png" id="11_mlv6i"]
+[ext_resource type="PackedScene" uid="uid://da3kmw4pom1fq" path="res://src/stamp.tscn" id="12_kqbth"]
+
+[sub_resource type="Resource" id="Resource_tb146"]
+script = ExtResource("10_d3u4l")
+full_name = "Виолета Барашек"
+faculty = "ИЭУ"
+student_id = "6767"
+issue_date = "22.05.25"
+photo = ExtResource("10_mlv6i")
+metadata/_custom_type_script = "uid://37bor8c7a5qt"
+
+[sub_resource type="Resource" id="Resource_e7lu8"]
+script = ExtResource("10_d3u4l")
+full_name = "Дмитрий Бавтута"
+faculty = "ИИК"
+student_id = "5252"
+issue_date = "22.07.26"
+photo = ExtResource("11_mlv6i")
+metadata/_custom_type_script = "uid://37bor8c7a5qt"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfi0k"]
+atlas = ExtResource("9_uewes")
+region = Rect2(17, 33, 15, 21)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_11iwd"]
+load_path = "res://.godot/imported/Безымянный 2.png-57a788f06696632311cf24b8e98cfcac.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amagb"]
+atlas = SubResource("CompressedTexture2D_11iwd")
+region = Rect2(17, 33, 15, 21)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ngp6"]
+load_path = "res://.godot/imported/Безымянный 2.png-57a788f06696632311cf24b8e98cfcac.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk34w"]
+atlas = SubResource("CompressedTexture2D_8ngp6")
+region = Rect2(16, 55, 17, 23)
+
+[node name="main" type="Control" unique_id=1812329845]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 1144.0
+offset_bottom = 647.0
+metadata/_edit_vertical_guides_ = [-665.0, -593.0, -612.0]
+metadata/_edit_horizontal_guides_ = [765.0]
+
+[node name="Stamp" parent="." unique_id=378934950 instance=ExtResource("12_kqbth")]
+z_index = 2
+position = Vector2(1784, 178)
+stamp_mark_scene = ExtResource("2_srxbw")
+
+[node name="Dragzone" type="Panel" parent="." unique_id=748616726]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -74.0
+offset_right = 600.0
+offset_bottom = 433.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Dragzone" unique_id=24754774]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 602.96106
+offset_bottom = 507.0
+texture = ExtResource("2_fyndt")
+expand_mode = 1
+
+[node name="InspectZone" type="Panel" parent="." unique_id=1867559430]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 600.0
+offset_top = 1.0
+offset_right = 775.74414
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="InspectZone" unique_id=1192743925]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 1320.0
+offset_bottom = 1075.0
+texture = ExtResource("3_5mrjc")
+
+[node name="StudentZone" type="Control" parent="." unique_id=600520120]
+layout_mode = 1
+anchor_right = 0.30900002
+anchor_bottom = 0.53300005
+offset_right = 230.17758
+offset_bottom = 229.14896
+
+[node name="TextureRect" type="TextureRect" parent="StudentZone" unique_id=336002847]
+layout_mode = 0
+offset_left = 5.5
+offset_right = 609.0
+offset_bottom = 575.0
+texture = ExtResource("1_rlaii")
+expand_mode = 1
+
+[node name="StudentSpawner" type="Control" parent="." unique_id=196007246]
+layout_mode = 1
+anchor_left = 0.23300001
+anchor_top = 0.388
+anchor_right = 0.307
+anchor_bottom = 0.535
+offset_left = -255.785
+offset_top = -252.03601
+offset_right = 244.16089
+offset_bottom = 225.906
+scale = Vector2(1, 1.0103812)
+mouse_filter = 1
+mouse_behavior_recursive = 2
+script = ExtResource("6_rlaii")
+student_scene = ExtResource("7_5mrjc")
+students = Array[ExtResource("10_d3u4l")]([ExtResource("8_kqbth"), SubResource("Resource_tb146"), SubResource("Resource_e7lu8")])
+spawn_position = Vector2(20, 60)
+move_duration = 1.0
+
+[node name="DocumentSpawner" type="Control" parent="." unique_id=1355548362]
+layout_mode = 1
+anchor_left = 0.23500001
+anchor_top = 0.39100003
+anchor_right = 0.29700002
+anchor_bottom = 0.53000003
+offset_left = 212.92499
+offset_top = 187.12885
+offset_right = 249.93497
+offset_bottom = 214.08997
+mouse_filter = 1
+script = ExtResource("3_3cfgd")
+document_scene = ExtResource("4_fyndt")
+drag_zone_path = NodePath("../Dragzone")
+inspect_zone_path = NodePath("../InspectZone")
+student_spawner_path = NodePath("../StudentSpawner")
+spawn_point = Vector2(-185, 130)
+move_duration = 1.0
+
+[node name="Bell2" type="Control" parent="." unique_id=1286426067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 478.0
+offset_top = 443.78558
+offset_right = -565.0
+offset_bottom = -73.654785
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 1
+script = ExtResource("9_mgm53")
+student_spawner_path = NodePath("../StudentSpawner")
+document_spawner_path = NodePath("../DocumentSpawner")
+
+[node name="TextureButton" type="TextureButton" parent="Bell2" unique_id=47148312]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0250001
+anchor_bottom = 0.98
+offset_left = -14.0
+offset_top = -42.785583
+offset_right = 25.025002
+offset_bottom = 5.756134
+texture_normal = SubResource("AtlasTexture_pfi0k")
+texture_pressed = SubResource("AtlasTexture_amagb")
+texture_hover = SubResource("AtlasTexture_jk34w")
+stretch_mode = 0

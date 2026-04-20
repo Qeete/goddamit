@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StudentData" format=3 uid="uid://djqcdeftqarcu"]
+
+[ext_resource type="Texture2D" uid="uid://i2uekhodjhor" path="res://assets/sticker-no-bg-preview (carve.photos).png" id="1_67mea"]
+[ext_resource type="Script" uid="uid://37bor8c7a5qt" path="res://src/student_data.gd" id="1_l6hun"]
+
+[resource]
+script = ExtResource("1_l6hun")
+full_name = "Артем Мацук ИГоревич"
+faculty = "ИИК"
+student_id = "228"
+issue_date = "22.04.26"
+photo = ExtResource("1_67mea")
+metadata/_custom_type_script = "uid://37bor8c7a5qt"

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://tm4tb5vg6m0r"]
+
+[ext_resource type="PackedScene" uid="uid://fj23ohfn8lyq" path="res://src/мусор/desk.tscn" id="1_tp5op"]
+[ext_resource type="PackedScene" uid="uid://dq2jcirocgmom" path="res://src/мусор/passport.tscn" id="2_xlegt"]
+
+[node name="world" type="Node2D" unique_id=374639476]
+
+[node name="desk" parent="." unique_id=2133766978 instance=ExtResource("1_tp5op")]
+position = Vector2(578, 326.99997)
+scale = Vector2(1.1199975, 1.6800001)
+
+[node name="passport" parent="." unique_id=804385675 instance=ExtResource("2_xlegt")]
+position = Vector2(149, 428)

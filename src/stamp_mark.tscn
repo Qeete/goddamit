@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c7ypb0ui033c0"]
+
+[ext_resource type="Texture2D" uid="uid://cqljpesga1qqw" path="res://assets/approved.png" id="1_esrac"]
+[ext_resource type="Script" uid="uid://bhjouim8n0i4y" path="res://src/stamp_mark.gd" id="2_ernkd"]
+[ext_resource type="Texture2D" uid="uid://ntneejiutmq" path="res://assets/denied2.png" id="3_ernkd"]
+
+[node name="StampMark" type="Sprite2D" unique_id=1644407388]
+position = Vector2(-14.999992, 5)
+scale = Vector2(0.06025644, 0.06025645)
+texture = ExtResource("1_esrac")
+script = ExtResource("2_ernkd")
+
+[node name="Denied2" type="Sprite2D" parent="." unique_id=803345756]
+position = Vector2(-33.191605, 66.382935)
+texture = ExtResource("3_ernkd")

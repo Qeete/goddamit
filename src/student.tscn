@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://hbl3on2ppefd"]
+
+[ext_resource type="Script" uid="uid://b5hulvmt5w56v" path="res://src/student.gd" id="1_6at51"]
+[ext_resource type="Texture2D" uid="uid://mvv5n4hp1yqk" path="res://assets/i-no-bg-preview (carve.photos).png" id="2_g01vl"]
+
+[node name="Student" type="Control" unique_id=447494271]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 4.0
+offset_right = 356.0
+offset_bottom = 348.0
+script = ExtResource("1_6at51")
+final_scale = Vector2(1.5, 1.5)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2062746774]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 43.0
+offset_right = 325.696
+offset_bottom = 347.0
+texture = ExtResource("2_g01vl")
+expand_mode = 1
