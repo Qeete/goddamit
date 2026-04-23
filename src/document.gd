@@ -9,8 +9,6 @@ var offset = Vector2.ZERO
 @export var open_texture: Texture
 @export var student_spawner: Node = null
 @export var stamp_scene: PackedScene
-
-# Сцена оверлея с лейблами (назначь в инспекторе документа)
 @export var open_overlay_scene: PackedScene
 
 var is_open = true
@@ -20,6 +18,9 @@ var current_tween: Tween = null
 var data: StudentData = null
 var _overlay: Control = null
 
+# ★ Результат штампа — записывается штампом, читается при броске на студента
+var stamp_result: String = ""
+
 func _ready() -> void:
 	add_to_group("documents")
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -28,28 +29,21 @@ func _ready() -> void:
 	if closed_texture:
 		texture = closed_texture
 
-# ★ Вызывается из document_spawner после спавна
 func setup(student_data: StudentData) -> void:
 	data = student_data
 	if data == null:
 		return
-
-	# Создаём оверлей если ещё не создан
 	if open_overlay_scene and _overlay == null:
 		_overlay = open_overlay_scene.instantiate()
 		add_child(_overlay)
 		_overlay.visible = false
-
 	if _overlay == null:
 		return
-
-	# Заполняем лейблы
 	var name_label    = _overlay.get_node_or_null("NameLabel")
 	var faculty_label = _overlay.get_node_or_null("FacultyLabel")
 	var id_label      = _overlay.get_node_or_null("IdLabel")
 	var date_label    = _overlay.get_node_or_null("DateLabel")
 	var photo_rect    = _overlay.get_node_or_null("Photo")
-
 	if name_label:
 		name_label.text = data.full_name
 	if faculty_label:
@@ -95,11 +89,20 @@ func update_hover_scale() -> void:
 
 func update_scale_after_release() -> void:
 	var doc_rect = get_global_rect()
+
+	# ★ Документ брошен на студента — реагируем по штампу
 	if student_zone != null and doc_rect.intersects(student_zone.get_global_rect()):
 		queue_free()
 		if student_spawner != null:
-			student_spawner.remove_current_student()
+			if stamp_result == "approved":
+				student_spawner.approve_current_student()
+			elif stamp_result == "denied":
+				student_spawner.deny_current_student()
+			else:
+				# Штамп не поставлен — обычный уход
+				student_spawner.remove_current_student()
 		return
+
 	if inspect_zone != null and doc_rect.intersects(inspect_zone.get_global_rect()):
 		scale_to(inspect_scale)
 		if open_texture:
@@ -107,6 +110,7 @@ func update_scale_after_release() -> void:
 		if _overlay:
 			_overlay.visible = true
 		return
+
 	scale_to(normal_scale)
 	if closed_texture:
 		texture = closed_texture
@@ -126,7 +130,6 @@ func place_stamp(_global_mouse_pos: Vector2) -> void:
 	if not is_open:
 		return
 	if stamp_scene == null:
-		print("⚠️ stamp_scene не указан!")
 		return
 	var stamp = stamp_scene.instantiate()
 	add_child(stamp)

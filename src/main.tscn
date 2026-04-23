@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dus0j0js6hcui"]
 
 [ext_resource type="Texture2D" uid="uid://bcmhy38bliswn" path="res://assets/Снимок экрана 2026-03-01 в 20.49.58.png" id="1_rlaii"]
+[ext_resource type="PackedScene" uid="uid://ddorqvyobq36m" path="res://src/stamp_markd.tscn" id="2_e7lu8"]
 [ext_resource type="Texture2D" uid="uid://d4m1v2mnjsjsu" path="res://assets/2026-03-01 20.41.11.jpg" id="2_fyndt"]
 [ext_resource type="PackedScene" uid="uid://c7ypb0ui033c0" path="res://src/stamp_mark.tscn" id="2_srxbw"]
 [ext_resource type="Script" uid="uid://b5tqbeh36rgr3" path="res://src/document_spawner.gd" id="3_3cfgd"]
 [ext_resource type="Texture2D" uid="uid://t0m8hh2lrwwg" path="res://assets/2026-03-01 20.21.09.jpg" id="3_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://ddaoi2wrek1bx" path="res://src/document.tscn" id="4_fyndt"]
+[ext_resource type="PackedScene" uid="uid://bvqg3utn6ha5y" path="res://scenes/stamp_denied.tscn" id="5_okx7f"]
 [ext_resource type="Script" uid="uid://bf40wtv81qfii" path="res://src/student_spawner.gd" id="6_rlaii"]
 [ext_resource type="PackedScene" uid="uid://hbl3on2ppefd" path="res://src/student.tscn" id="7_5mrjc"]
 [ext_resource type="Resource" uid="uid://djqcdeftqarcu" path="res://assets/student_1.tres" id="8_kqbth"]
@@ -61,6 +63,12 @@ offset_bottom = 647.0
 metadata/_edit_vertical_guides_ = [-665.0, -593.0, -612.0]
 metadata/_edit_horizontal_guides_ = [765.0]
 
+[node name="root" parent="." unique_id=1920973022 instance=ExtResource("5_okx7f")]
+z_index = 2
+position = Vector2(1783, 342)
+scale = Vector2(1.0799903, 1.0799903)
+stamp_mark_scene = ExtResource("2_e7lu8")
+
 [node name="Stamp" parent="." unique_id=378934950 instance=ExtResource("12_kqbth")]
 z_index = 2
 position = Vector2(1784, 178)
@@ -102,10 +110,10 @@ mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="InspectZone" unique_id=1192743925]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 1.0
-offset_right = 1320.0
-offset_bottom = 1075.0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 1319.0
+offset_bottom = 1077.0
 texture = ExtResource("3_5mrjc")
 
 [node name="StudentZone" type="Control" parent="." unique_id=600520120]
